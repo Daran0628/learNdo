@@ -4,8 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS100 :: 01. 동적 UI 만들기 (alert box) </title>
+    <!-- css -->
+    <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-    <h1>JS100 :: 01. Alert Box</h1>    
+    <h1>JS100 :: 01. Alert Box</h1>
+
+    <div class="alert-box" id="alert">
+        <p id="title">알림창</p> 
+        <button id="close"> X </button>
+    </div>
+    <button onclick="alertMsg('ID를 입력해')">버튼 1</button>
+    <button onclick="alertMsg('PW를 입력해')">버튼 2</button>
+
+    <script>
+        // function ctlAlert(prameter) {
+        //     document.getElementById('alert').style.display=prameter;
+        // }
+        function alertMsg(text) {
+            document.getElementById('alert').style.display='block';
+            document.getElementById('title').innerText = text;
+        }
+        document.getElementById('close').addEventListener('click', function() {
+            document.getElementById('alert').style.display='none';
+        })
+    </script>
 </body>
 </html>
